@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -691,6 +691,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1686560262}
   m_SourcePrefab: {fileID: 100100000, guid: f6265dd8e2b3e4912a8e93fc5dbfee49, type: 3}
+--- !u!1 &1330089391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3102380631904355757, guid: f6265dd8e2b3e4912a8e93fc5dbfee49, type: 3}
+  m_PrefabInstance: {fileID: 1330089390}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1358135524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -773,6 +778,57 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 131298823}
   m_SourcePrefab: {fileID: 100100000, guid: dc7d320995b3f4799b3f265465ff800f, type: 3}
+--- !u!1 &1358135525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4575138866653544537, guid: dc7d320995b3f4799b3f265465ff800f, type: 3}
+  m_PrefabInstance: {fileID: 1358135524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1473011875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1473011877}
+  - component: {fileID: 1473011876}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1473011876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473011875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0984ae57d636dbf40bdd167d43c98cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 1330089391}
+  player2: {fileID: 1358135525}
+--- !u!4 &1473011877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473011875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6608899, y: -11.146346, z: 2.4034758}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1627784583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4575138867273838542, guid: dc7d320995b3f4799b3f265465ff800f, type: 3}
