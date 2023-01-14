@@ -1427,6 +1427,30 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4436053832437128153, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9555548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436053832437128153, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.16849007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436053832437128153, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.23824655
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436053832437128153, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.04200929
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436053832437128153, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436053832437128153, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4436053834118403493, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_Name
       value: Player1Objects
@@ -1486,6 +1510,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6980121413686758872, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9555548
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980121413686758872, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.16849007
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980121413686758872, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.23824646
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980121413686758872, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.04200927
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980121413686758872, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6980121415569234869, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_Name
       value: Player2Objects
