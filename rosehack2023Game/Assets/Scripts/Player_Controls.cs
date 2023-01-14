@@ -13,8 +13,7 @@ public class Player_Controls : MonoBehaviour
 
     //Private Variables
     private Controls controls;
-    private Vector2 inputP1;
-    private Vector2 inputP2;
+    private Vector2 input;
 
     void Awake()
     {
@@ -24,17 +23,22 @@ public class Player_Controls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inputP1 = controls.Player1.Movement.ReadValue<Vector2>();
-        rb.velocity = new Vector3(playerSpeed*inputP1.x, 0, playerSpeed*inputP1.y);
+
+        rb.velocity = new Vector3(playerSpeed*input.x, 0, 0);
+    }
+
+    public void updateInput(Vector2 _input)
+    {
+        input = _input;
     }
 
     void OnEnable()
     {
-        controls.Player1.Enable();
+        // controls.Player1.Enable();
     }
 
     void OnDisable(){
-        controls.Player1.Disable();
+        // controls.Player1.Disable();
     }
 
 }
