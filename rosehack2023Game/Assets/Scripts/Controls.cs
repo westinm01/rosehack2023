@@ -94,6 +94,78 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Player2"",
+            ""id"": ""8a708770-ece8-4208-a8cf-5c12d4e66b61"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""06d4a486-b833-4c69-8c1c-2f575ec64f76"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""ArrowKeys"",
+                    ""id"": ""687eed2e-2113-40a8-a452-45bb14a25dfe"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""d177fe0d-7a4d-4117-89c6-edefa4647ff7"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""84a39621-beea-48ca-8499-3ff716de4bdd"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""38ac5f32-504f-42bb-bfa9-5743ba159906"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""3e16b12e-65cb-4266-9638-9e44cbfb4d56"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -107,6 +179,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         // Player1
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Movement = m_Player1.FindAction("Movement", throwIfNotFound: true);
+        // Player2
+        m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
+        m_Player2_Movement = m_Player2.FindAction("Movement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -195,6 +270,39 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         }
     }
     public Player1Actions @Player1 => new Player1Actions(this);
+
+    // Player2
+    private readonly InputActionMap m_Player2;
+    private IPlayer2Actions m_Player2ActionsCallbackInterface;
+    private readonly InputAction m_Player2_Movement;
+    public struct Player2Actions
+    {
+        private @Controls m_Wrapper;
+        public Player2Actions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Player2_Movement;
+        public InputActionMap Get() { return m_Wrapper.m_Player2; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player2Actions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer2Actions instance)
+        {
+            if (m_Wrapper.m_Player2ActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMovement;
+            }
+            m_Wrapper.m_Player2ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+            }
+        }
+    }
+    public Player2Actions @Player2 => new Player2Actions(this);
     private int m_ControlsSchemeIndex = -1;
     public InputControlScheme ControlsScheme
     {
@@ -205,6 +313,10 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         }
     }
     public interface IPlayer1Actions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+    }
+    public interface IPlayer2Actions
     {
         void OnMovement(InputAction.CallbackContext context);
     }
