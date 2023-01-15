@@ -19,10 +19,9 @@ public class CrateBreaker : MonoBehaviour
     {
         if (col.gameObject.tag == "Ground" && canBreak)
         {
-            // Debug.Log("TOUCHING GrOUND AAAAAAAAAAAAAAAAAAAAAA");
-            ch.breakCrate(gameObject);
             canBreak = false;
             FindObjectOfType<SFXPlayer>().PlayBreakCrateSFX();
+            ch.breakCrate(gameObject);
         }
     }
 

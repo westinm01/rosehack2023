@@ -69,8 +69,19 @@ public class CrateHandler : MonoBehaviour
         //     }
         // }
         nextCratePos -= new Vector3(0, 1.5f,0);
-        stack.RemoveAt(crate.GetComponent<CrateBreaker>().getID());
+        Debug.Log("Delete ID: " + currentCrate.GetComponent<CrateBreaker>().getID());
+        Debug.Log("numcrates: " + numCrates);
+        numCrates--;
+        
+        foreach(GameObject _crate in stack){
+            if(_crate.GetComponent<CrateBreaker>().getID() > currentCrate.GetComponent<CrateBreaker>().getID() ){
+                _crate.GetComponent<CrateBreaker>().setID(_crate.GetComponent<CrateBreaker>().getID() - 1);
+            }
+        }
+
+        stack.RemoveAt(currentCrate.GetComponent<CrateBreaker>().getID());
         Destroy(currentCrate);
+
     }
 
 
