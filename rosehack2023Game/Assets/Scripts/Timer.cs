@@ -11,6 +11,14 @@ public class Timer : MonoBehaviour
     private TMP_Text timerText;
     private bool timerActive = false;
     private float timeRemaining;
+    [SerializeField]
+    private ScoreSystem scores;
+    [SerializeField]
+    private GameObject redWinScreen;
+    [SerializeField]
+    private GameObject blueWinScreen;
+    [SerializeField]
+    private GameObject tieScreen;
 
     private void Awake()
     {
@@ -32,7 +40,18 @@ public class Timer : MonoBehaviour
             timeRemaining = 0f;
             timerActive = false;
 
-            // TODO: end game
+            if(scores.getLeftScore() > scores.getRightScore())
+            {
+                redWinScreen.SetActive(true);
+            }
+            else if(scores.getLeftScore() < scores.getRightScore()){
+                blueWinScreen.SetActive(true);
+            }
+            else
+            {
+                tieScreen.SetActive(true);
+            }
+            Time.timeScale = 0;
         }
         timerText.text = Mathf.RoundToInt(timeRemaining).ToString();
     }

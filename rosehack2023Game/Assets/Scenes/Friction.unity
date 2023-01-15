@@ -885,7 +885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 464142156}
-  ch: {fileID: 1477790426}
+  ch: {fileID: 85913275}
 --- !u!114 &464142156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3363,7 +3363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8442154106191145017, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: spawnSpacing
-      value: 1.6
+      value: 2.1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6345511835404891123, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
@@ -3431,7 +3431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6779992994784000658, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: spawnSpacing
-      value: 1.6
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 6980121414042825775, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_Layer
