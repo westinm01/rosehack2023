@@ -1600,9 +1600,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 580288448381126558, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 127
+      objectReference: {fileID: 0}
     - target: {fileID: 3188742994051062211, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14229494
+      value: 0.14229496
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436053832259888927, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4436053834118403493, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_Name
@@ -1652,9 +1660,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4436053834118403495, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+      propertyPath: ch
+      value: 
+      objectReference: {fileID: 1477790426}
     - target: {fileID: 5078906665804506935, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14229494
+      value: 0.14229496
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -1670,9 +1682,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 126133486392609306, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 191
+      objectReference: {fileID: 0}
     - target: {fileID: 5817902098409360729, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14229494
+      value: 0.14229496
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980121414042825775, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6980121415569234869, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_Name
@@ -1724,7 +1744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7821696970908878256, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14229494
+      value: 0.14229496
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
