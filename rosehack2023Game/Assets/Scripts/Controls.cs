@@ -35,6 +35,24 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pickup"",
+                    ""type"": ""Button"",
+                    ""id"": ""403d8a17-4099-4b6d-bd12-8ded730e3ee6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drop"",
+                    ""type"": ""Button"",
+                    ""id"": ""a539a4ea-fcb8-4d7d-a9c0-8fbd5e7765a9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +110,28 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b62e548-3ce3-4620-958b-89e47e324ee1"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pickup"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""936b8935-8b91-414e-833c-3f64afdec321"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -107,6 +147,24 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pickup"",
+                    ""type"": ""Button"",
+                    ""id"": ""3d1b4246-128c-4bea-afc1-71f996c8170b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drop"",
+                    ""type"": ""Button"",
+                    ""id"": ""cd3721c1-a69f-46c8-b98b-d2193274d830"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -164,6 +222,28 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a77771c5-711c-48f5-a3a1-83601b697c65"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pickup"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35665835-ad0e-4b30-9652-e0a67c2075d0"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -179,9 +259,13 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         // Player1
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Movement = m_Player1.FindAction("Movement", throwIfNotFound: true);
+        m_Player1_Pickup = m_Player1.FindAction("Pickup", throwIfNotFound: true);
+        m_Player1_Drop = m_Player1.FindAction("Drop", throwIfNotFound: true);
         // Player2
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Movement = m_Player2.FindAction("Movement", throwIfNotFound: true);
+        m_Player2_Pickup = m_Player2.FindAction("Pickup", throwIfNotFound: true);
+        m_Player2_Drop = m_Player2.FindAction("Drop", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -242,11 +326,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player1;
     private IPlayer1Actions m_Player1ActionsCallbackInterface;
     private readonly InputAction m_Player1_Movement;
+    private readonly InputAction m_Player1_Pickup;
+    private readonly InputAction m_Player1_Drop;
     public struct Player1Actions
     {
         private @Controls m_Wrapper;
         public Player1Actions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player1_Movement;
+        public InputAction @Pickup => m_Wrapper.m_Player1_Pickup;
+        public InputAction @Drop => m_Wrapper.m_Player1_Drop;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -259,6 +347,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMovement;
+                @Pickup.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnPickup;
+                @Pickup.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnPickup;
+                @Pickup.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnPickup;
+                @Drop.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnDrop;
+                @Drop.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnDrop;
+                @Drop.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnDrop;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -266,6 +360,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Pickup.started += instance.OnPickup;
+                @Pickup.performed += instance.OnPickup;
+                @Pickup.canceled += instance.OnPickup;
+                @Drop.started += instance.OnDrop;
+                @Drop.performed += instance.OnDrop;
+                @Drop.canceled += instance.OnDrop;
             }
         }
     }
@@ -275,11 +375,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player2;
     private IPlayer2Actions m_Player2ActionsCallbackInterface;
     private readonly InputAction m_Player2_Movement;
+    private readonly InputAction m_Player2_Pickup;
+    private readonly InputAction m_Player2_Drop;
     public struct Player2Actions
     {
         private @Controls m_Wrapper;
         public Player2Actions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player2_Movement;
+        public InputAction @Pickup => m_Wrapper.m_Player2_Pickup;
+        public InputAction @Drop => m_Wrapper.m_Player2_Drop;
         public InputActionMap Get() { return m_Wrapper.m_Player2; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -292,6 +396,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnMovement;
+                @Pickup.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnPickup;
+                @Pickup.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnPickup;
+                @Pickup.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnPickup;
+                @Drop.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnDrop;
+                @Drop.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnDrop;
+                @Drop.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnDrop;
             }
             m_Wrapper.m_Player2ActionsCallbackInterface = instance;
             if (instance != null)
@@ -299,6 +409,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Pickup.started += instance.OnPickup;
+                @Pickup.performed += instance.OnPickup;
+                @Pickup.canceled += instance.OnPickup;
+                @Drop.started += instance.OnDrop;
+                @Drop.performed += instance.OnDrop;
+                @Drop.canceled += instance.OnDrop;
             }
         }
     }
@@ -315,9 +431,13 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     public interface IPlayer1Actions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnPickup(InputAction.CallbackContext context);
+        void OnDrop(InputAction.CallbackContext context);
     }
     public interface IPlayer2Actions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnPickup(InputAction.CallbackContext context);
+        void OnDrop(InputAction.CallbackContext context);
     }
 }

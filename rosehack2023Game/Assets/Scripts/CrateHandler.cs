@@ -24,6 +24,8 @@ public class CrateHandler : MonoBehaviour
     }
 
     public void removeCrate(){
+        if(numCrates <= 0) return;
+        Destroy(stack[numCrates-1]);
         stack.RemoveAt(numCrates - 1);
         numCrates--;
         nextCratePos = nextCratePos - new Vector3(0, 1.5f, 0);
