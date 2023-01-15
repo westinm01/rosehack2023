@@ -12,6 +12,7 @@ public class CrateHandler : MonoBehaviour
     //Private Vars
     [SerializeField] int numCrates;
     [SerializeField] Vector3 nextCratePos;
+    [SerializeField] bool isLeftPlayer;
     GameObject crateHolder;
 
     void Awake(){
@@ -51,6 +52,8 @@ public class CrateHandler : MonoBehaviour
             Destroy(crate);
         }
         stack.Clear();
+
+        FindObjectOfType<ScoreSystem>().AddScore(isLeftPlayer, numCrates);
         numCrates = 0;
     }
 
