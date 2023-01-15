@@ -25,8 +25,6 @@ public class CrateBreaker : MonoBehaviour
             FindObjectOfType<SFXPlayer>().PlayBreakCrateSFX();
         }
     }
-
-
     
     public void setID(int i){
         crateID = i;
