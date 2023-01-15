@@ -8,6 +8,7 @@ public class SFXPlayer : MonoBehaviour
 
     [SerializeField] AudioClip breakCrate;
     [SerializeField] AudioClip pickupCrate;
+    [SerializeField] AudioClip depositCrate;
 
     private void Awake()
     {
@@ -21,5 +22,9 @@ public class SFXPlayer : MonoBehaviour
     public void PlayPickupCrateSFX()
     {
         audioSource.PlayOneShot(pickupCrate);
+    }
+    public void PlayDepositCrateSFX()
+    {
+        audioSource.PlayOneShot(depositCrate);
     }
 }

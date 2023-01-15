@@ -82,6 +82,7 @@ public class CrateHandler : MonoBehaviour
         numCrates = 0;
         Debug.Log("NO CRATES");
         risingCamera.RaiseCamera(numCrates);
+        FindObjectOfType<SFXPlayer>().PlayDepositCrateSFX();
     }
 
 

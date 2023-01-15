@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakCrate: {fileID: 8300000, guid: cd4233cb0794fb64d94551d1c8757ca8, type: 3}
   pickupCrate: {fileID: 8300000, guid: 976c4aa42ff90214f871750a469b04ec, type: 3}
+  depositCrate: {fileID: 8300000, guid: 34990f375f611404fa38e8fd8194c1a5, type: 3}
 --- !u!82 &7186905158683650132
 AudioSource:
   m_ObjectHideFlags: 0
