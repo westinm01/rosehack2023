@@ -21,6 +21,10 @@ public class InputManager : MonoBehaviour
     void Awake()
     {
         controls = new Controls();
+        controls.Player1.Pickup.performed += _ => player1.GetComponent<Player_Controls>().pickup();
+        controls.Player1.Drop.performed += _ => player1.GetComponent<Player_Controls>().drop();
+        controls.Player2.Pickup.performed += _ => player2.GetComponent<Player_Controls>().pickup();
+        controls.Player2.Drop.performed += _ => player2.GetComponent<Player_Controls>().drop();
     }
 
     // Update is called once per frame
