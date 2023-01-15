@@ -8,6 +8,7 @@ public class CrateHandler : MonoBehaviour
     [SerializeField] List<GameObject> stack;
     [SerializeField] GameObject crate;
     [SerializeField] GameObject playerHolder;
+    [SerializeField] RisingCamera risingCamera;
     
     //Private Vars
     [SerializeField] int numCrates;
@@ -43,6 +44,8 @@ public class CrateHandler : MonoBehaviour
         stack.Add(crateHolder);
         numCrates++;
         nextCratePos = nextCratePos + new Vector3(0, spawnSpacing, 0);
+
+        risingCamera.RaiseCamera(numCrates);
     }
 
     public void removeCrate(){
@@ -51,6 +54,8 @@ public class CrateHandler : MonoBehaviour
         stack.RemoveAt(numCrates - 1);
         numCrates--;
         nextCratePos = nextCratePos - new Vector3(0, spawnSpacing, 0);
+        risingCamera.RaiseCamera(numCrates);
+
     }
 
     public void dropAll(){
@@ -67,6 +72,7 @@ public class CrateHandler : MonoBehaviour
         FindObjectOfType<ScoreSystem>().AddScore(isLeftPlayer, numCrates);
         numCrates = 0;
         Debug.Log("NO CRATES");
+        risingCamera.RaiseCamera(numCrates);
     }
 
 
@@ -92,7 +98,9 @@ public class CrateHandler : MonoBehaviour
         stack.RemoveAt(currentCrate.GetComponent<CrateBreaker>().getID());
         
         Destroy(currentCrate,0.05f);
-        
+
+        risingCamera.RaiseCamera(numCrates);
+
         //stack.RemoveAt(crate.GetComponent<CrateBreaker>().getID());
         //Destroy(currentCrate,0.05f);
     }
