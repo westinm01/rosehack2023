@@ -57,6 +57,10 @@ public class CrateHandler : MonoBehaviour
         numCrates = 0;
     }
 
+    public int getNumCrates()
+    {
+        return numCrates;
+    }
 
 
 

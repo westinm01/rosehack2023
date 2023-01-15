@@ -27,6 +27,6 @@ public class CrateBreaker : MonoBehaviour
     void Break()
     {
         
-        delete this;
+        //delete this;
     }
 }
