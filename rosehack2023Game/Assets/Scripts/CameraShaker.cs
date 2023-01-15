@@ -8,11 +8,13 @@ public class CameraShaker : MonoBehaviour
     bool isShaking = false;
     private float shakeTimeLeft = 0f;
 
+    private CinemachineVirtualCamera virtualCamera;
     private CinemachineBasicMultiChannelPerlin shaker;
 
     private void Awake()
     {
-        shaker = GetComponent<CinemachineBasicMultiChannelPerlin>();
+        virtualCamera = GetComponent<CinemachineVirtualCamera>();
+        shaker = virtualCamera.AddCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     private void Update()

@@ -19,6 +19,15 @@ public class CrateHandler : MonoBehaviour
     [SerializeField] float spawnSpacing;
     [SerializeField] float minHeight;
     [SerializeField] float maxHeight;
+
+    [Header("Camera Shake")]
+    [SerializeField]
+    float frequency;
+    [SerializeField]
+    float amplitude;
+    [SerializeField]
+    float time;
+
     GameObject crateHolder;
 
     void Awake(){
@@ -105,6 +114,7 @@ public class CrateHandler : MonoBehaviour
         Destroy(currentCrate,0.05f);
 
         risingCamera.RaiseCamera(numCrates);
+        risingCamera.GetComponent<CameraShaker>().ShakeCamera(frequency, amplitude, time);
 
     }
 
