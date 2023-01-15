@@ -26,8 +26,6 @@ public class CrateBreaker : MonoBehaviour
         }
     }
 
-
-    
     public void setID(int i){
         crateID = i;
     }
