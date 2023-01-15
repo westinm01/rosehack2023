@@ -13,6 +13,9 @@ public class CrateHandler : MonoBehaviour
     [SerializeField] int numCrates;
     [SerializeField] Vector3 nextCratePos;
     [SerializeField] bool isLeftPlayer;
+    [SerializeField] float spawnSpacing;
+    [SerializeField] float minHeight;
+    [SerializeField] float maxHeight;
     GameObject crateHolder;
 
     void Awake(){
@@ -24,6 +27,11 @@ public class CrateHandler : MonoBehaviour
     {
         transform.position = new Vector3(playerHolder.transform.position.x, transform.position.y, playerHolder.transform.position.z);
         nextCratePos = new Vector3(transform.position.x, nextCratePos.y, transform.position.z);
+        if(nextCratePos.y <= minHeight){
+            nextCratePos = new Vector3(transform.position.x, minHeight, transform.position.z);
+        }else if(nextCratePos.y >= maxHeight){
+            nextCratePos = new Vector3(transform.position.x, maxHeight, transform.position.z);
+        }
     }
 
 
@@ -34,7 +42,7 @@ public class CrateHandler : MonoBehaviour
         crateHolder.GetComponent<CrateBreaker>().setID(numCrates);
         stack.Add(crateHolder);
         numCrates++;
-        nextCratePos = nextCratePos + new Vector3(0, 1.5f, 0);
+        nextCratePos = nextCratePos + new Vector3(0, spawnSpacing, 0);
     }
 
     public void removeCrate(){
@@ -42,7 +50,7 @@ public class CrateHandler : MonoBehaviour
         Destroy(stack[numCrates-1]);
         stack.RemoveAt(numCrates - 1);
         numCrates--;
-        nextCratePos = nextCratePos - new Vector3(0, 1.5f, 0);
+        nextCratePos = nextCratePos - new Vector3(0, spawnSpacing, 0);
     }
 
     public void dropAll(){
@@ -51,14 +59,10 @@ public class CrateHandler : MonoBehaviour
 
         foreach (GameObject crate in stack)
         {
-            nextCratePos -= new Vector3(0, 1.5f,0);
-            
+            nextCratePos -= new Vector3(0, spawnSpacing,0);
             Destroy(crate);
-            //breakCrate(crate);
-            //numCrates++;
-            
         }
-        //stack.Clear();
+        stack.Clear();
 
         FindObjectOfType<ScoreSystem>().AddScore(isLeftPlayer, numCrates);
         numCrates = 0;
@@ -74,7 +78,7 @@ public class CrateHandler : MonoBehaviour
         //     }
         // }
         currentCrate.SetActive(false);
-        nextCratePos -= new Vector3(0, 1.5f,0);
+        nextCratePos -= new Vector3(0, spawnSpacing,0);
         Debug.Log("Delete ID: " + currentCrate.GetComponent<CrateBreaker>().getID());
         Debug.Log("numcrates: " + numCrates);
         numCrates--;
