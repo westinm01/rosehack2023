@@ -755,7 +755,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Programmers:
+  m_text: '-Programmers-
 
     Westin Montano
 
@@ -764,7 +764,7 @@ MonoBehaviour:
     Niko Udria
 
 
-    Artist/Modeler:
+    -Artist/Modeler-
 
     Westin
     Montano'
@@ -1514,7 +1514,7 @@ MonoBehaviour:
     Left/Right - move.
 
 
-    Goal: Get as many crates
+    Goal - Get as many crates
     from the center to your end station.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47892242c9fd73d449f81a4cc0aad009, type: 2}
