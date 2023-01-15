@@ -51,13 +51,18 @@ public class CrateHandler : MonoBehaviour
 
         foreach (GameObject crate in stack)
         {
-            nextCratePos -= new Vector3(0, 1.5f,0);
-            Destroy(crate);
+            //nextCratePos -= new Vector3(0, 1.5f,0);
+            
+            //Destroy(crate);
+            breakCrate(crate);
+            numCrates++;
+            
         }
-        stack.Clear();
+        //stack.Clear();
 
         FindObjectOfType<ScoreSystem>().AddScore(isLeftPlayer, numCrates);
         numCrates = 0;
+        Debug.Log("NO CRATES");
     }
 
 
@@ -70,7 +75,8 @@ public class CrateHandler : MonoBehaviour
         // }
         nextCratePos -= new Vector3(0, 1.5f,0);
         stack.RemoveAt(crate.GetComponent<CrateBreaker>().getID());
-        Destroy(currentCrate);
+        Destroy(currentCrate,0.05f);
+        numCrates--;
     }
 
 
