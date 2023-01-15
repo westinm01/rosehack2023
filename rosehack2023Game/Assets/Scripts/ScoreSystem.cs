@@ -34,4 +34,14 @@ public class ScoreSystem : MonoBehaviour
     {
         textField.text = score.ToString();
     }
+
+    public int getLeftScore()
+    {
+        return leftScore;
+    }
+
+    public int getRightScore()
+    {
+        return rightScore;
+    }
 }
