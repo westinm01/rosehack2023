@@ -24,10 +24,8 @@ public class CrateBreaker : MonoBehaviour
             canBreak = false;
         }
     }
-
     public void setID(int i){
         crateID = i;
-    }
 
     public int getID(){
         return crateID;

@@ -17,11 +17,13 @@ public class Player_Controls : MonoBehaviour
     private Controls controls;
     private Vector2 input;
     private bool canPickup;
+    private float walkTimer;
     // private List<GameObject> stack;
 
     void Awake()
     {
         controls = new Controls();
+        walkTimer = 0;
     }
 
     // Update is called once per frame
@@ -29,6 +31,14 @@ public class Player_Controls : MonoBehaviour
     {
 
         rb.velocity = new Vector3(playerSpeed*input.x, 0, 0);
+        if(Mathf.Abs(rb.velocity.x) > 0.001f)
+        {
+            walkTimer += Time.deltaTime;
+        }
+        else
+        {
+            walkTimer = 0;
+        }
     }
 
     public void updateInput(Vector2 _input)
@@ -56,5 +66,13 @@ public class Player_Controls : MonoBehaviour
         ch.dropAll();
     }
 
+    public float getWalkTimer()
+    {
+        return walkTimer;
+    }
 
+    public float getDirection()
+    {
+        return input.x;
+    }
 }

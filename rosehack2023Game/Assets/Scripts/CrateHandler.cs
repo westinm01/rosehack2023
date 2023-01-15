@@ -60,6 +60,7 @@ public class CrateHandler : MonoBehaviour
         numCrates = 0;
     }
 
+
     public void breakCrate(GameObject currentCrate){
         
         // foreach(GameObject _crate in stack){
@@ -70,6 +71,12 @@ public class CrateHandler : MonoBehaviour
         nextCratePos -= new Vector3(0, 1.5f,0);
         stack.RemoveAt(crate.GetComponent<CrateBreaker>().getID());
         Destroy(currentCrate);
+    }
+
+
+    public int getNumCrates()
+    {
+        return numCrates;
     }
 
 
