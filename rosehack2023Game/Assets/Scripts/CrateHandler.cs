@@ -12,6 +12,8 @@ public class CrateHandler : MonoBehaviour
     
     //Private Vars
     [SerializeField] int numCrates;
+    [SerializeField] bool funCap;
+    [SerializeField] bool canSpawn;
     [SerializeField] Vector3 nextCratePos;
     [SerializeField] bool isLeftPlayer;
     [SerializeField] float spawnSpacing;
@@ -22,6 +24,7 @@ public class CrateHandler : MonoBehaviour
     void Awake(){
         numCrates = 0;
         nextCratePos = transform.position;
+        canSpawn = true;
     }
 
     void Update()
@@ -30,15 +33,22 @@ public class CrateHandler : MonoBehaviour
         nextCratePos = new Vector3(transform.position.x, nextCratePos.y, transform.position.z);
         if(nextCratePos.y <= minHeight){
             nextCratePos = new Vector3(transform.position.x, minHeight, transform.position.z);
-        }else if(nextCratePos.y >= maxHeight){
-            nextCratePos = new Vector3(transform.position.x, maxHeight, transform.position.z);
+        }else if(nextCratePos.y >= maxHeight || numCrates == 10){
+            if(funCap && numCrates >= 10){
+                canSpawn = false;
+                return;
+            }else{
+                nextCratePos = new Vector3(transform.position.x, maxHeight, transform.position.z);
+            }
+        }else{
+            canSpawn = true;
         }
     }
 
 
     public void addCrate(){
+        if(!canSpawn) return; 
         crateHolder = Instantiate(crate, nextCratePos, Quaternion.identity);
-        // crateHolder.transform.parent = transform;
         crateHolder.GetComponent<CrateBreaker>().setHandler(gameObject.GetComponent<CrateHandler>());
         crateHolder.GetComponent<CrateBreaker>().setID(numCrates);
         stack.Add(crateHolder);
@@ -78,11 +88,6 @@ public class CrateHandler : MonoBehaviour
 
     public void breakCrate(GameObject currentCrate){
         
-        // foreach(GameObject _crate in stack){
-        //     if(_crate.GetComponent<CrateBreaker>().getID == crate.GetComponent<CrateBreaker>().getID){
-                
-        //     }
-        // }
         currentCrate.SetActive(false);
         nextCratePos -= new Vector3(0, spawnSpacing,0);
         Debug.Log("Delete ID: " + currentCrate.GetComponent<CrateBreaker>().getID());
@@ -101,8 +106,6 @@ public class CrateHandler : MonoBehaviour
 
         risingCamera.RaiseCamera(numCrates);
 
-        //stack.RemoveAt(crate.GetComponent<CrateBreaker>().getID());
-        //Destroy(currentCrate,0.05f);
     }
 
 
@@ -110,10 +113,6 @@ public class CrateHandler : MonoBehaviour
     {
         return numCrates;
     }
-
-
-
-
 
 
 
