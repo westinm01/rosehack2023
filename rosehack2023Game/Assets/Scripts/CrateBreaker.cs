@@ -26,7 +26,7 @@ public class CrateBreaker : MonoBehaviour
 
     void Break()
     {
-        
-        delete this;
+        FindObjectOfType<SFXPlayer>().PlayBreakCrateSFX();
+        //delete this;
     }
 }
