@@ -51,11 +51,11 @@ public class CrateHandler : MonoBehaviour
 
         foreach (GameObject crate in stack)
         {
-            //nextCratePos -= new Vector3(0, 1.5f,0);
+            nextCratePos -= new Vector3(0, 1.5f,0);
             
-            //Destroy(crate);
-            breakCrate(crate);
-            numCrates++;
+            Destroy(crate);
+            //breakCrate(crate);
+            //numCrates++;
             
         }
         //stack.Clear();
@@ -73,6 +73,7 @@ public class CrateHandler : MonoBehaviour
                 
         //     }
         // }
+        currentCrate.SetActive(false);
         nextCratePos -= new Vector3(0, 1.5f,0);
         Debug.Log("Delete ID: " + currentCrate.GetComponent<CrateBreaker>().getID());
         Debug.Log("numcrates: " + numCrates);
@@ -85,9 +86,11 @@ public class CrateHandler : MonoBehaviour
         }
 
         stack.RemoveAt(currentCrate.GetComponent<CrateBreaker>().getID());
-        Destroy(currentCrate);
-        stack.RemoveAt(crate.GetComponent<CrateBreaker>().getID());
+        
         Destroy(currentCrate,0.05f);
+        
+        //stack.RemoveAt(crate.GetComponent<CrateBreaker>().getID());
+        //Destroy(currentCrate,0.05f);
     }
 
 

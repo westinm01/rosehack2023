@@ -23,7 +23,7 @@ public class CrateBreaker : MonoBehaviour
             // Debug.Log("TOUCHING GrOUND AAAAAAAAAAAAAAAAAAAAAA");
             ParticleSystem temp = Instantiate(splinterFX, transform.position, Quaternion.identity);
             temp.Play();
-            ch.breakCrate(gameObject);
+            //ch.breakCrate(gameObject);
             canBreak = false;
             FindObjectOfType<SFXPlayer>().PlayBreakCrateSFX();
             ch.breakCrate(gameObject);
