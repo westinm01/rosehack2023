@@ -4,29 +4,33 @@ using UnityEngine;
 
 public class CrateBreaker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    [SerializeField] CrateHandler ch;
+    [SerializeField] int crateID;
+
+    bool canBreak;
+
+    public void setHandler(CrateHandler _ch){
+        ch = _ch;
+        canBreak = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision col)
     {
-        
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Ground" && canBreak)
         {
-            Break();
+            // Debug.Log("TOUCHING GrOUND AAAAAAAAAAAAAAAAAAAAAA");
+            ch.breakCrate(gameObject);
+            canBreak = false;
         }
     }
 
-    void Break()
-    {
-        
-        delete this;
+    public void setID(int i){
+        crateID = i;
     }
+
+    public int getID(){
+        return crateID;
+    }
+
 }
