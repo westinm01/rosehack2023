@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6364966081321887577}
   - component: {fileID: -8711454833109650860}
   - component: {fileID: 8876089109191501647}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,3 +129,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ch: {fileID: 0}
+  crateID: 0
