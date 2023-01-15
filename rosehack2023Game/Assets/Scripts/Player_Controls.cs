@@ -33,6 +33,7 @@ public class Player_Controls : MonoBehaviour
         rb.velocity = new Vector3(playerSpeed*input.x, 0, 0);
         if(Mathf.Abs(rb.velocity.x) > 0.001f)
         {
+            rb.gameObject.GetComponent<SpriteRenderer>().flipX = input.x == -1;
             walkTimer += Time.deltaTime;
         }
         else
