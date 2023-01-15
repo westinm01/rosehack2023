@@ -6,6 +6,8 @@ public class Player_Controls : MonoBehaviour
 {
     [Header("Object Assignment")]
     [SerializeField] Rigidbody rb;
+    // [SerializeField] GameObject crate;
+    [SerializeField] CrateHandler ch;
 
 
     [Header("Player Stats")]
@@ -14,6 +16,8 @@ public class Player_Controls : MonoBehaviour
     //Private Variables
     private Controls controls;
     private Vector2 input;
+    private bool canPickup;
+    // private List<GameObject> stack;
 
     void Awake()
     {
@@ -30,6 +34,22 @@ public class Player_Controls : MonoBehaviour
     public void updateInput(Vector2 _input)
     {
         input = _input;
+    }
+
+    public void pickup(){
+        if(!canPickup) return;
+        ch.addCrate();
+        Debug.Log("Pikceudp1");
+        
+    }
+    
+    public void drop(){
+        if(!canPickup) return;
+        ch.removeCrate();
+    }
+
+    public void setCanPickup(bool _pickup){
+        canPickup = _pickup;
     }
 
     void OnEnable()
