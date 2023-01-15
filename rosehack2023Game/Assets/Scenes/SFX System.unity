@@ -1923,25 +1923,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1641265286, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1641265286, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 76af15576b9759342a2d0070f5c74f1a, type: 3}
     - target: {fileID: 3188742994051062211, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.091017805
+      value: 0.09101783
       objectReference: {fileID: 0}
     - target: {fileID: 3188742994051062211, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.18803771
+      value: 0.18803772
       objectReference: {fileID: 0}
     - target: {fileID: 3188742994051062211, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.017503733
+      value: -0.017503742
       objectReference: {fileID: 0}
     - target: {fileID: 4436053834118403493, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_Name
@@ -1993,15 +1985,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5078906665804506935, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.091017805
+      value: 0.09101783
       objectReference: {fileID: 0}
     - target: {fileID: 5078906665804506935, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.18803771
+      value: 0.18803772
       objectReference: {fileID: 0}
     - target: {fileID: 5078906665804506935, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.017503733
+      value: -0.017503742
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2014,25 +2006,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2147445299394570310, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2147445299394570310, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 76af15576b9759342a2d0070f5c74f1a, type: 3}
     - target: {fileID: 5817902098409360729, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.091017805
+      value: 0.09101783
       objectReference: {fileID: 0}
     - target: {fileID: 5817902098409360729, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.18803771
+      value: -0.18803772
       objectReference: {fileID: 0}
     - target: {fileID: 5817902098409360729, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.017503733
+      value: 0.017503742
       objectReference: {fileID: 0}
     - target: {fileID: 6980121415569234869, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_Name
@@ -2084,15 +2068,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7821696970908878256, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.091017805
+      value: 0.09101783
       objectReference: {fileID: 0}
     - target: {fileID: 7821696970908878256, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.18803771
+      value: -0.18803772
       objectReference: {fileID: 0}
     - target: {fileID: 7821696970908878256, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.017503733
+      value: 0.017503742
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

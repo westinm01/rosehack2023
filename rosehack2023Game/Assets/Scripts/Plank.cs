@@ -32,7 +32,6 @@ public class Plank : MonoBehaviour
             float r = Random.Range(0.00f, 2f);
             rotation = numCrates / 2 * walkTimer * walkTimer + numCrates * walkTimer - 2 + r;
             rotation *= dir;
-            // Debug.Log(walkTimer + " : " + numCrates);
             target = Quaternion.Euler(0,0,rotation);
         }
         else{
