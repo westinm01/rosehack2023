@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 5078906665804506935}
   - component: {fileID: 4118178980966327330}
   - component: {fileID: 5200943915290557762}
+  - component: {fileID: 4655550752276771965}
   m_Layer: 6
   m_Name: P1 Follow Cam
   m_TagString: Untagged
@@ -192,6 +193,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4655550752276771965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316386120768188946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f037fbe0796524bbdcde7c309cf5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4436053832259888927
@@ -439,6 +452,7 @@ GameObject:
   - component: {fileID: 7701103355473691256}
   - component: {fileID: 380545728048685715}
   - component: {fileID: 6479670292545414987}
+  - component: {fileID: 4436053832207644854}
   m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
@@ -522,6 +536,23 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+--- !u!114 &4436053832207644854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7717759373136846711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &4436053833233412037
 PrefabInstance:
   m_ObjectHideFlags: 0
