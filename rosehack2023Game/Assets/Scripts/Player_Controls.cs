@@ -31,7 +31,7 @@ public class Player_Controls : MonoBehaviour
     {
 
         rb.velocity = new Vector3(playerSpeed*input.x, 0, 0);
-        if(rb.velocity.x * rb.velocity.x > 0.001f)
+        if(Mathf.Abs(rb.velocity.x) > 0.001f)
         {
             walkTimer += Time.deltaTime;
         }
@@ -69,5 +69,10 @@ public class Player_Controls : MonoBehaviour
     public float getWalkTimer()
     {
         return walkTimer;
+    }
+
+    public float getDirection()
+    {
+        return input.x;
     }
 }

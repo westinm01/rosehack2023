@@ -10,6 +10,7 @@ public class Plank : MonoBehaviour
     float walkTimer;
     float rotation = 0;
     Transform t;
+    float dir;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,17 +23,20 @@ public class Plank : MonoBehaviour
     void Update()
     {
         walkTimer = pC.getWalkTimer();
+        dir = pC.getDirection();
+        numCrates = cH.getNumCrates();
+        Quaternion target;
         if(walkTimer > 0.1f)
         {
             rotation = numCrates / 2 * walkTimer * walkTimer + numCrates * walkTimer - 2;
-            Quaternion target = Quaternion.Euler(0, 0, rotation);
-            t.rotation = target;
+            Debug.Log(walkTimer + " : " + numCrates);
+            target = Quaternion.Euler(0,0,rotation);
         }
         else{
-            rotation = 0;
-            Quaternion target = Quaternion.Euler(0,0,0);
-            t.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5.0f);
+            target = Quaternion.Euler(0,0,0);
+            
         }
+        t.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5.0f);
         
     }
 }
