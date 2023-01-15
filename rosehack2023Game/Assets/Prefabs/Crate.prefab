@@ -130,3 +130,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ch: {fileID: 0}
   crateID: 0
+  splinterFX: {fileID: 4902442005588028156, guid: b1ca165330adf4ce19c7e355e7d4cf31, type: 3}
