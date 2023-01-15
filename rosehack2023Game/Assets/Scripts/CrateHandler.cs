@@ -10,7 +10,7 @@ public class CrateHandler : MonoBehaviour
     [SerializeField] GameObject playerHolder;
     
     //Private Vars
-    int numCrates;
+    [SerializeField] int numCrates;
     [SerializeField] Vector3 nextCratePos;
     GameObject crateHolder;
 
@@ -40,6 +40,18 @@ public class CrateHandler : MonoBehaviour
         stack.RemoveAt(numCrates - 1);
         numCrates--;
         nextCratePos = nextCratePos - new Vector3(0, 1.5f, 0);
+    }
+
+    public void dropAll(){
+        if(numCrates <= 0) return;
+
+        foreach (GameObject crate in stack)
+        {
+            nextCratePos -= new Vector3(0, 1.5f,0);
+            Destroy(crate);
+        }
+        stack.Clear();
+        numCrates = 0;
     }
 
 

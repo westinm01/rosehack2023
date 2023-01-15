@@ -52,13 +52,9 @@ public class Player_Controls : MonoBehaviour
         canPickup = _pickup;
     }
 
-    void OnEnable()
-    {
-        // controls.Player1.Enable();
+    public void dropOff(){
+        ch.dropAll();
     }
 
-    void OnDisable(){
-        // controls.Player1.Disable();
-    }
 
 }
