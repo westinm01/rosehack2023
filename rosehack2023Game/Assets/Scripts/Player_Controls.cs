@@ -44,11 +44,23 @@ public class Player_Controls : MonoBehaviour
     public void updateInput(Vector2 _input)
     {
         input = _input;
+        if (Mathf.Abs(_input.x) > Mathf.Epsilon)
+        {
+            if (!GetComponentInChildren<AudioSource>().isPlaying)
+            {
+                GetComponentInChildren<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            GetComponentInChildren<AudioSource>().Stop();
+        }
     }
 
     public void pickup(){
         if(!canPickup) return;
         ch.addCrate();
+        FindObjectOfType<SFXPlayer>().PlayPickupCrateSFX();
         // Debug.Log("Pikceudp1");
         
     }

@@ -22,14 +22,16 @@ public class CrateBreaker : MonoBehaviour
             // Debug.Log("TOUCHING GrOUND AAAAAAAAAAAAAAAAAAAAAA");
             ch.breakCrate(gameObject);
             canBreak = false;
+            FindObjectOfType<SFXPlayer>().PlayBreakCrateSFX();
         }
     }
+
 
     
     public void setID(int i){
         crateID = i;
-
     }
+
 
     public int getID(){
         return crateID;
