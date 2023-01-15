@@ -207,6 +207,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 60
+  scores: {fileID: 0}
+  redWinScreen: {fileID: 0}
+  blueWinScreen: {fileID: 0}
+  tieScreen: {fileID: 0}
 --- !u!222 &172151053
 CanvasRenderer:
   m_ObjectHideFlags: 0
