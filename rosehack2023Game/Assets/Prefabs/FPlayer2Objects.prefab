@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &728151893520718350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2678098154204867876}
+  - component: {fileID: 6779992994784000658}
+  m_Layer: 0
+  m_Name: CrateHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2678098154204867876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728151893520718350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6980121415569234870}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6779992994784000658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728151893520718350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21da65f297b17414f96fc29110c11abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stack: []
+  crate: {fileID: 6199262967386107471, guid: c9063b3250e004048952dc90345afc21, type: 3}
+  playerHolder: {fileID: 6980121414042825775}
+  numCrates: 0
+  nextCratePos: {x: 0, y: 0, z: 0}
 --- !u!1 &2644604561476762880
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +475,7 @@ Transform:
   - {fileID: 6980121415169980426}
   - {fileID: 5817902098409360729}
   - {fileID: 7821696970908878256}
+  - {fileID: 2678098154204867876}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -442,6 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6980121414042825763}
+  ch: {fileID: 0}
   playerSpeed: 2
 --- !u!1 &8446415283143590460
 GameObject:
