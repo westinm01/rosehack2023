@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
             {
                 tieScreen.SetActive(true);
             }
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
         }
         timerText.text = Mathf.RoundToInt(timeRemaining).ToString();
     }

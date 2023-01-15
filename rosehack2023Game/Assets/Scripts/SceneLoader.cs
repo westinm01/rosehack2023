@@ -6,9 +6,15 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
 
-    public void LoadSceneByIndex(int i)
+    void Start()
     {
         Time.timeScale = 1.0f;
+    }
+
+    public void LoadSceneByIndex(int i)
+    {
+        Debug.Log("reset time");
+        //Time.timeScale = 1.0f;
         SceneManager.LoadScene(i);
     }
 }

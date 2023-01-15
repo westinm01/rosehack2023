@@ -20,6 +20,7 @@ public class RisingCamera : MonoBehaviour
     Coroutine coroutine;
 
     float timeElapsed = 0f;
+    float timeToComplete;
 
     private void Awake()
     {
@@ -31,13 +32,19 @@ public class RisingCamera : MonoBehaviour
 
     public void RaiseCamera(int numCrates)
     {
+        float leftoverTime = 0f;
+        if (timeElapsed > 0f)
+        {
+            leftoverTime = riseTime - timeElapsed;
+        }
+
         timeElapsed = 0f;
 
         if (coroutine != null)
         {
             StopCoroutine(coroutine);
         }
-        coroutine = StartCoroutine(RaiseCamOverTime(numCrates));
+        coroutine = StartCoroutine(RaiseCamOverTime(numCrates, riseTime + leftoverTime));
     }
 
     private Vector3 GetCurrPos()
@@ -45,7 +52,7 @@ public class RisingCamera : MonoBehaviour
         return transposer.m_FollowOffset;
     }
 
-    IEnumerator RaiseCamOverTime(int numCrates)
+    IEnumerator RaiseCamOverTime(int numCrates, float timeToComplete)
     {
         Vector3 oldPos = GetCurrPos();
 
@@ -53,11 +60,11 @@ public class RisingCamera : MonoBehaviour
         newPos.y += riseAmount * numCrates;
         Debug.Log(newPos);
 
-        while (timeElapsed < riseTime)
+        while (timeElapsed < timeToComplete)
         {
             timeElapsed += Time.deltaTime;
 
-            transposer.m_FollowOffset.y = Mathf.Lerp(oldPos.y, newPos.y, timeElapsed / riseTime);
+            transposer.m_FollowOffset.y = Mathf.Lerp(oldPos.y, newPos.y, timeElapsed / timeToComplete);
 
             yield return null;
         }
