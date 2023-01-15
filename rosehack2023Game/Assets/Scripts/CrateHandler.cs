@@ -29,7 +29,9 @@ public class CrateHandler : MonoBehaviour
 
     public void addCrate(){
         crateHolder = Instantiate(crate, nextCratePos, Quaternion.identity);
-        crateHolder.transform.parent = transform;
+        // crateHolder.transform.parent = transform;
+        crateHolder.GetComponent<CrateBreaker>().setHandler(gameObject.GetComponent<CrateHandler>());
+        crateHolder.GetComponent<CrateBreaker>().setID(numCrates);
         stack.Add(crateHolder);
         numCrates++;
         nextCratePos = nextCratePos + new Vector3(0, 1.5f, 0);
@@ -44,6 +46,7 @@ public class CrateHandler : MonoBehaviour
     }
 
     public void dropAll(){
+        Debug.Log(numCrates);
         if(numCrates <= 0) return;
 
         foreach (GameObject crate in stack)
@@ -57,10 +60,25 @@ public class CrateHandler : MonoBehaviour
         numCrates = 0;
     }
 
+
+    public void breakCrate(GameObject currentCrate){
+        
+        // foreach(GameObject _crate in stack){
+        //     if(_crate.GetComponent<CrateBreaker>().getID == crate.GetComponent<CrateBreaker>().getID){
+                
+        //     }
+        // }
+        nextCratePos -= new Vector3(0, 1.5f,0);
+        stack.RemoveAt(crate.GetComponent<CrateBreaker>().getID());
+        Destroy(currentCrate);
+    }
+
+
     public int getNumCrates()
     {
         return numCrates;
     }
+
 
 
 
