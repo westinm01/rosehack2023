@@ -133,6 +133,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97e4af75b8040634c98e95063b31eb3f, type: 3}
   m_PrefabInstance: {fileID: 1097580152}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &85913273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 85913274}
+  - component: {fileID: 85913275}
+  m_Layer: 0
+  m_Name: CrateHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &85913274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85913273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 833311615}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &85913275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85913273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21da65f297b17414f96fc29110c11abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stack: []
+  crate: {fileID: 6199262967386107471, guid: c9063b3250e004048952dc90345afc21, type: 3}
+  playerHolder: {fileID: 1279311048}
+  nextCratePos: {x: 0, y: 0, z: 0}
 --- !u!4 &122215820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97e4af75b8040634c98e95063b31eb3f, type: 3}
@@ -643,6 +691,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6980121415569234869, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
   m_PrefabInstance: {fileID: 6980121414790711496}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &833311615 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6980121415569234870, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+  m_PrefabInstance: {fileID: 6980121414790711496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &893783487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -889,6 +942,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97e4af75b8040634c98e95063b31eb3f, type: 3}
   m_PrefabInstance: {fileID: 1024482546}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1279311048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6980121414042825775, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+  m_PrefabInstance: {fileID: 6980121414790711496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1322843094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1099,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stack: []
   crate: {fileID: 6199262967386107471, guid: c9063b3250e004048952dc90345afc21, type: 3}
+  playerHolder: {fileID: 1518790333}
   nextCratePos: {x: -5, y: 1, z: 0}
+--- !u!1 &1518790333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4436053832259888927, guid: 30554b105feaa4ed4bacf10aec5e4ea1, type: 3}
+  m_PrefabInstance: {fileID: 4436053832207644852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1548048768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1742,10 +1806,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6980121415569234871, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+      propertyPath: ch
+      value: 
+      objectReference: {fileID: 85913275}
     - target: {fileID: 7821696970908878256, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.14229496
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6980121415569234870, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 85913274}
   m_SourcePrefab: {fileID: 100100000, guid: d9d4d88f06dc2424bb313f6d053dd25e, type: 3}
